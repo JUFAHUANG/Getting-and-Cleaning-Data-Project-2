@@ -8,11 +8,11 @@ options(scipen=100)
 features=read.table('UCI HAR Dataset/features.txt', sep=" ")
 
 #Read in data
-X_traindata=read.table('UCI HAR Dataset/train/X_train.txt', header=FALSE, col.names=features[,2])
-X_testdata=read.table('UCI HAR Dataset/test/X_test.txt', header=FALSE, col.names=features[,2])
+X_train=read.table('UCI HAR Dataset/train/X_train.txt', header=FALSE, col.names=features[,2])
+X_test=read.table('UCI HAR Dataset/test/X_test.txt', header=FALSE, col.names=features[,2])
 
-Y_traindata=read.table('UCI HAR Dataset/train/Y_train.txt', header=FALSE)
-Y_testdata=read.table('UCI HAR Dataset/test/Y_test.txt', header=FALSE)
+Y_train=read.table('UCI HAR Dataset/train/Y_train.txt', header=FALSE)
+Y_test=read.table('UCI HAR Dataset/test/Y_test.txt', header=FALSE)
 
 #Read in subject information
 trainsub=read.table('UCI HAR Dataset/train/subject_train.txt', header=FALSE)
@@ -61,4 +61,4 @@ for (s in 1:numSub) {
     r = r+1
   }
 }
-write.table(result, "tidy_data.txt")
+write.table(tidydata, "tidy_data.txt")
