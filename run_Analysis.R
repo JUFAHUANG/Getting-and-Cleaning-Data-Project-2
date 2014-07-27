@@ -33,8 +33,8 @@ names(X_total) <- features[meanstdfeatures, 2]
 names(X_total) <- gsub("\\(|\\)", "", names(X_total))
 
 # Uses descriptive activity names to name the activities in the data set
-act <- read.table("activity_labels.txt")
-act[, 2] = gsub("_", "", as.character(activities[, 2]))
+act <- read.table("UCI HAR Dataset/activity_labels.txt")
+act[, 2] = gsub("_", "", as.character(act[, 2]))
 Y_total[,1] = act[Y_total[,1], 2]
 names(Y_total) <- "Activity"
 
